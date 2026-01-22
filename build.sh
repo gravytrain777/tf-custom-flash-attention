@@ -1,5 +1,7 @@
 export LD_LIBRARY_PATH=/usr/local/cuda-12.3/:/usr/local/isl/lib/:$LD_LIBRARY_PATH
 
+cd ./sdpa
+
 OP_NAME="sdpa"
 sosuffix="so.2.16"
 
