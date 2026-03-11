@@ -240,7 +240,7 @@ __global__ void FlashAttnBwdKernel_Q(const T *__restrict__ Q, const T *__restric
         load_tile<T, D_MAX>(s_Q, Q, tid, blockDim.x, Br, D_qk, S_q, tile_offset_q, batch_offset_q);
         load_tile<T, D_MAX>(s_dO, dO, tid, blockDim.x, Br, D_v, S_q, tile_offset_q, batch_offset_q);
     }
-
+     __syncthreads();
     T *q_ptr = s_Q + tid * D_MAX;
     T *dO_ptr = s_dO + tid * D_MAX;
 
